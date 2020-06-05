@@ -1,3 +1,11 @@
 ru:
   model:
     errors:
+      user:
+        name:
+          blank: 'Укажите ваше имя'
+          format: 'Укажите имя, используя буквы, цифры или символ подчёркивания'
+        email:
+          blank: 'Укажите email'
+        password:
+          blank: 'Укажите пароль'
