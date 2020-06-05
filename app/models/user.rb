@@ -1,7 +1,12 @@
 class User < Sequel::Model
+  plugin :association_dependencies
   plugin :secure_password, include_validations: false
 
   NAME_FORMAT = %r{\A\w+\z}
+
+  one_to_many :sessions, class: :UserSession, raise_on_save_failure: false
+
+  add_association_dependencies sessions: :delete
 
   def validate
     super
@@ -11,6 +16,6 @@ class User < Sequel::Model
 
     validates_presence :email, message: I18n.t(:blank, scope: 'model.errors.user.email')
 
-    validates_presence :password, message: I18n.t(:blank, scope: 'model.errors.user.password')
+    validates_presence :password, message: I18n.t(:blank, scope: 'model.errors.user.password') if new?
   end
 end

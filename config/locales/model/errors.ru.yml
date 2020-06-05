@@ -9,3 +9,6 @@ ru:
           blank: 'Укажите email'
         password:
           blank: 'Укажите пароль'
+      user_session:
+        uuid:
+          blank: 'Отсутствует uuid'

@@ -4,3 +4,5 @@ db:
   user: postgres
 pagination:
   page_size: 10
+app:
+  secret: secret
