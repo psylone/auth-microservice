@@ -1,0 +1,3 @@
+db:
+  database: auth_microservice_test
+  max_connections: 1
