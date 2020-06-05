@@ -1,8 +1,8 @@
 RSpec.describe UserRoutes, type: :routes do
-  describe 'POST /v1/signup' do
+  describe 'POST /' do
     context 'missing parameters' do
       it 'returns an error' do
-        post '/v1/signup', name: 'bob', email: 'bob@example.com', password: ''
+        post '/', name: 'bob', email: 'bob@example.com', password: ''
 
         expect(last_response.status).to eq(422)
       end
@@ -10,7 +10,7 @@ RSpec.describe UserRoutes, type: :routes do
 
     context 'invalid parameters' do
       it 'returns an error' do
-        post '/v1/signup', name: 'b.o.b', email: 'bob@example.com', password: 'givemeatoken'
+        post '/', name: 'b.o.b', email: 'bob@example.com', password: 'givemeatoken'
 
         expect(last_response.status).to eq(422)
         expect(response_body['errors']).to include(
@@ -26,7 +26,7 @@ RSpec.describe UserRoutes, type: :routes do
 
     context 'valid parameters' do
       it 'returns created status' do
-        post '/v1/signup', name: 'bob', email: 'bob@example.com', password: 'givemeatoken'
+        post '/', name: 'bob', email: 'bob@example.com', password: 'givemeatoken'
 
         expect(last_response.status).to eq(201)
       end
