@@ -20,8 +20,13 @@ module UserSessions
     end
 
     def create_session
-      @session = @user.add_session({})
-      fail!(@session.errors) unless @session.present?
+      @session = UserSession.new
+
+      if @session.valid?
+        @user.add_session(@session)
+      else
+        fail!(@session.errors)
+      end
     end
 
     def fail_t!(key)
