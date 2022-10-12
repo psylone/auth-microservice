@@ -1,8 +1,10 @@
 db:
   adapter: postgresql
   host: localhost
-  user: postgres
+  user: safrio
 pagination:
   page_size: 10
 app:
   secret: secret
+rabbitmq:
+  consumer_pool: 10
