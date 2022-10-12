@@ -14,6 +14,7 @@ gem 'i18n', '~> 1.8.2'
 gem 'config', '~> 2.2.1'
 gem 'jwt', '~> 2.2.1'
 
+gem 'bunny', '~> 2.15.0'
 gem 'pg', '~> 1.2.3'
 gem 'sequel', '~> 5.32.0'
 gem 'sequel_secure_password', '~> 0.2.15'
